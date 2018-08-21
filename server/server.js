@@ -20,6 +20,3 @@ app.use(bodyParser());
 app.use(router.routes()); // route middleware
 
 app.listen(process.env.PORT || 8080);
-
-//app key
-//AIzaSyBCX1XgRbgS5rzu6JI9HSsz-zug1_cGEME
