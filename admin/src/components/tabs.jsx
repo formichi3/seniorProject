@@ -35,13 +35,13 @@ export default class myTabs extends React.Component {
   };
 
   getLocks() {
-    axios.get('https://adroit-metric-194509.appspot.com/locks/')
+    axios.get('https://cmpe123b.appspot.com/locks/')
         .then(response => this.setState({data: response.data}, () =>
         console.log("Locks --->", this.state.data)))
   }
 
   componentWillMount() {
-    axios.get('https://adroit-metric-194509.appspot.com/locks/')
+    axios.get('https://cmpe123b.appspot.com/locks/')
         .then(response => this.setState({locks: response.data}, () =>
         console.log("Locks --->", this.state.locks)))
   }

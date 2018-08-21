@@ -61,7 +61,7 @@ export default class MyUserTable extends Component {
   }
 
   componentWillMount() {
-    axios.get(`https://adroit-metric-194509.appspot.com/${this.props.data}/`)
+    axios.get(`https://cmpe123b.appspot.com/${this.props.data}/`)
         .then(response => this.setState({data: response.data, tempData: response.data}, () =>
         console.log("Locks --->", this.state.data)))
   }
@@ -114,10 +114,10 @@ export default class MyUserTable extends Component {
       newGroups.push(this.state.newGroup)
       newUser.groups = newGroups
     }
-    axios.post(`https://adroit-metric-194509.appspot.com/users`, newUser)
+    axios.post(`https://cmpe123b.appspot.com/users`, newUser)
         .then(response => {
           console.log(response);
-          axios.get(`https://adroit-metric-194509.appspot.com/${this.props.data}/`)
+          axios.get(`https://cmpe123b.appspot.com/${this.props.data}/`)
               .then(response => this.setState({data: response.data, tempData: response.data, dialogOpen: false}, () =>
               console.log("Users --->", this.state.data)
             ));
@@ -131,8 +131,8 @@ export default class MyUserTable extends Component {
   }
 
   handleDeleteUser() {
-    axios.delete(`https://adroit-metric-194509.appspot.com/users/${this.state.selectedRow.ID}`)
-        .then(response => axios.get(`https://adroit-metric-194509.appspot.com/users/`)
+    axios.delete(`https://cmpe123b.appspot.com/users/${this.state.selectedRow.ID}`)
+        .then(response => axios.get(`https://cmpe123b.appspot.com/users/`)
             .then(response => this.setState({data: response.data, manageOpen: false, tempData: response.data}, () =>
             console.log("users --->", this.state.data)
           )));

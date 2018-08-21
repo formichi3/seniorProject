@@ -46,7 +46,7 @@ export default class MyRecordsTable extends Component {
   }
 
   componentWillMount() {
-    // axios.get(`https://adroit-metric-194509.appspot.com/${this.props.data}/`)
+    // axios.get(`https://cmpe123b.appspot.com/${this.props.data}/`)
     //     .then(response => this.setState({data: response.data}, () =>
     //     console.log("Records --->", this.state.data)))
     this.hourlyData();

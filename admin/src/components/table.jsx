@@ -21,7 +21,6 @@ import ReactJson from 'react-json-view'
 
 
 
-
 import RaisedButton from 'material-ui/RaisedButton';
 
 export default class MyTable extends Component {
@@ -79,7 +78,7 @@ export default class MyTable extends Component {
   }
 
   componentWillMount() {
-    axios.get(`https://adroit-metric-194509.appspot.com/${this.props.data}/`)
+    axios.get(`https://cmpe123b.appspot.com/${this.props.data}/`)
         .then(response => this.setState({data: response.data, tempData: response.data}, () =>
         console.log("Locks --->", this.state.data)))
   }
@@ -141,7 +140,7 @@ export default class MyTable extends Component {
     if (this.state.newGroup !== ""){
       updatedLock.permittedGroups.push(this.state.newGroup);
     }
-    axios.post(`https://adroit-metric-194509.appspot.com/locks/update`, updatedLock)
+    axios.post(`https://cmpe123b.appspot.com/locks/update`, updatedLock)
     .then(response => {
       console.log(response);
       this.setState({editOpen:false, manageOpen:true})
@@ -155,10 +154,10 @@ export default class MyTable extends Component {
     newLock.status = "connected"
     console.log("newLock: ", newLock);
     this.setState({dialogOpen: false})
-    axios.post(`https://adroit-metric-194509.appspot.com/locks`, newLock)
+    axios.post(`https://cmpe123b.appspot.com/locks`, newLock)
         .then(response => {
           console.log(response);
-          axios.get(`https://adroit-metric-194509.appspot.com/${this.props.data}/`)
+          axios.get(`https://cmpe123b.appspot.com/${this.props.data}/`)
               .then(response => this.setState({data: response.data, tempData: response.data, dialogOpen: false}, () =>
               console.log("Locks --->", this.state.data)
             ));
@@ -246,7 +245,7 @@ export default class MyTable extends Component {
   }
 
   handleDeleteLock(){
-    axios.delete(`https://adroit-metric-194509.appspot.com/locks/${this.state.selectedRow.ID}`)
+    axios.delete(`https://cmpe123b.appspot.com/locks/${this.state.selectedRow.ID}`)
         .then((response) => {
           console.log(response);
           this.setState({manageOpen: false})
